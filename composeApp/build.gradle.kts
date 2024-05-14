@@ -29,15 +29,26 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material)
+            implementation(compose.material3)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.kotlinx.datetime)
+            implementation(libs.koin.core)
+            /* Koin */
+            api(libs.koin.core)
+            /* Voyager */
+            implementation(libs.voyager.navigator)
+            implementation(libs.voyager.transitions)
+            implementation(libs.voyager.bottomsheet.navigator)
+            implementation(libs.voyager.tab.navigator)
+            implementation(libs.voyager.livedata)
+            implementation(libs.voyager.koin)
         }
     }
 }
