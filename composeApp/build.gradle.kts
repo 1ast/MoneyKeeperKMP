@@ -19,7 +19,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "ComposeApp"
+            baseName = "MoneyKeeper"
             isStatic = true
         }
     }
@@ -27,19 +27,23 @@ kotlin {
     sourceSets {
         
         androidMain.dependencies {
+            implementation(libs.androidx.material3.android)
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.androidx.ui.text.google.fonts)
             implementation(libs.koin.android)
         }
         commonMain.dependencies {
+            //ui
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+
+            /* DateTime */
             implementation(libs.kotlinx.datetime)
-            implementation(libs.koin.core)
             /* Koin */
             api(libs.koin.core)
             /* Voyager */
@@ -78,6 +82,9 @@ android {
             isMinifyEnabled = false
         }
     }
+    buildFeatures {
+        buildConfig=true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -86,4 +93,3 @@ android {
         debugImplementation(libs.compose.ui.tooling)
     }
 }
-

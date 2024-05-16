@@ -2,4 +2,7 @@
     <string name="app_name">MoneyKeeper</string>
     <string name="dashboard_title">Dashboard</string>
     <string name="history_title">History</string>
+    <string name="add_tab_title">Add</string>
+    <string name="add_cash_account">Add cash account</string>
+    <string name="add_money_order">Add money order</string>
 </resources>
